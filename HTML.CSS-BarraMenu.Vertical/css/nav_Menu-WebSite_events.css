@@ -1,0 +1,243 @@
+/* -------------- CSS [ ARCHIVO ESTRUCTURA ]
+   * 
+   * INDICE DIVISIONES EN ARCHIVO CSS
+   * -------------------------------------------------------------------
+   * RESPONSIVE DESIGN [ Configuracion General ]
+   * RESPONSIVE DESIGN [ Configuracion para PC Desktop ]
+   * RESPONSIVE DESIGN [ Configuracion para Equipo Movil ]
+   * 
+   * 
+   * INDICE SECCIONES POR DIVISION EN ARCHIVO CSS
+   * -------------------------------------------------------------------
+   * 01. DISEÑO   [ MARGENES Y ESPACIOS ]
+   * 02. DISEÑO   [ VISUALIZAR Y POSICIONES ]
+   * 03. DISEÑO   [ ICONOS ]
+   * 04. DISEÑO   [ FUENTES Y ESTILOS DE TEXTO ]
+   * 05. DISEÑO   [ FONDOS, COLORES Y RELLENOS ]
+   * 06. DISEÑO   [ BORDES Y FORMAS ]
+   * 07. DISEÑO   [ EFECTOS VISUALES Y SONIDOS ]
+   * 08. COMPORTA [ OPERACIONES MOUSE ]
+   * 
+*/
+/* -------------- MENU PARA WEBSITE [ INSTRUCCIONES ]
+   * 
+   * Menu para desplegar opciones en un sitio web, este Menu puede ser
+   * visible en cualquier dispositivo y tiene diferentes comportamientos
+   * segun el tamaño de dispositivo o el tamaño del navegador.
+   * 
+   * Este Menu se compone de 4 Elmentos basicos
+   * 1. Codigo HTML (menu.html)
+   * 2. Codigo CSS de Eventos (nav_Menu-Website_events)
+   * 3. Codigo CSS de Estilos (nav_Menu-Website_styles)
+   * 4. Imagenes de Iconos (.gif .jpg .png)
+   * 
+   * 
+   * 2. Codigo CSS de Eventos (nav_Menu-Website_events)
+   * 
+   * INSTALACION
+   * -------------------------------------------------------------------
+   * A) En caso de ser un Menu en todo el Website
+   *    1. Hacer referencia dentro de "<head>" principal del codigo HTML
+   *       a los archivos CSS :
+        <!-- Menu (Archivos CSS) -->
+        <link rel='stylesheet' id='style-css'  href='css/nav_Menu-WebSite_events.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='style-css'  href='css/nav_Menu-WebSite_styles.css' type='text/css' media='all' />
+   * 
+   *    2. Copiar codigo HTML de Menu en archivos del website dentro de
+   *        la zona "<body><header>"
+           <a class="a_Toggle-Menu" id="a_Resett-Menu-WebSite" href="#" >[ RESET ]</a>
+           <a class="a_Toggle-Menu" id="a_Toggle-Menu-WebSite" href="#" >[ MENU ]</a>
+           <nav class="nav_Menu" id="nav_Menu-WebSite">
+            .....
+           </nav>
+   * 
+   *    3. Modificar el codigo HTML segun las necesidades, el Menu esta 
+   *       diseñado para un numero ilimitado de opciones
+   * 
+   *    4. Copiar en directorio "/css" los archivos:
+   *       nav_Menu-Website_events.css
+   *       nav_Menu-Website_styles.css
+   * 
+   *    5. Copiar los archivos de iconos en el directorio "/css/icons/actions"
+   * 
+   *    6. Configurar Comportamiento del Menu segun necesidades en archivo:
+   *       "nav_Menu-Website_events.css"
+   * 
+   *    7. Configurar Estilos del Menu segun necesidades en archivo:
+   *       "nav_Menu-Website_styles.css"
+   * 
+   * 
+   * IMPLEMENTACION
+   * -------------------------------------------------------------------
+   * A) MODIFICAR LOS ITEMS DEL MENU
+   *    1. El Menu esta diseñado para trabajar con un numero ilimitado
+   *       de niveles de items, los tags son estandares en cada item.
+   * 
+   *    2. En caso del menu principal del website debe estar en:
+   *       <body><header><nav>
+   * 
+   *       Los nombres de clase e identificadores llevan la nomenclatura
+   *       class="nav_Menu"
+   *       id="nav_Menu-WebSite"
+   * 
+   *    3. En caso de menu de seccion debe estar contenido en:
+   *       <section><header><nav>
+   * 
+   *       Los nombres de clase e identificadores llevan la nomenclatura
+   *       class="nav_Menu"
+   *       id="nav_Menu-WebSite"
+   * 
+   *    4. Cada Menu se compone de:
+   *       4.1 Boton de Lanzamiento
+   *       4.2 Boton de Reset de Lanzamiento
+   *       4.3 Items del Menu
+   * 
+   *    5. El "Boton de Lanzamiento" se declara:
+   *       <a class="a_Toggle-Menu" id="a_Toggle-Menu-WebSite" href="#" >[ MENU ]</a>
+   * 
+   *    6. El "Boton de Reset de Lanzamiento" se declara:
+   *       <a class="a_Toggle-Menu" id="a_Resett-Menu-WebSite" href="#" >[ RESET ]</a>
+   * 
+   * 
+   * 
+   * CONFIGURACION
+   * DESINSTALACION
+   * 
+   * 
+   * 
+   * MENU COMPORTAMIENTO
+   * -------------------------------------------------------------------
+   * MENU-COMPORTA-01
+   * MENU BOTON TOGGLE (MOUSE PASADA) > MENU NIVEL UNO (MOUSE PASADA) > MENU NIVEL DOS+ (MOUSE PASADA)
+   * 
+   * MENU-COMPORTA-02
+   * MENU BOTON TOGGLE (MOUSE CLICK) > MENU NIVEL UNO (MOUSE PASADA) > MENU NIVEL DOS+ (MOUSE PASADA)
+   * 
+   * MENU-COMPORTA-03 (Recomendado para uso en PC Desktop)
+   * MENU BOTON TOGGLE (MOUSE CLICK) > MENU NIVEL UNO (MOUSE CLICK) > MENU NIVEL DOS+ (MOUSE PASADA)
+   * 
+   * MENU-COMPORTA-04 (Recomendado para uso en Tablets o Moviles)
+   * MENU BOTON TOGGLE (MOUSE CLICK) > MENU NIVEL UNO (MOUSE CLICK) > MENU NIVEL DOS+ (MOUSE CLICK)
+   * 
+   * MENU-COMPORTA-05 (Recomendado para uso en PC Desktop)
+   * MENU BOTON TOGGLE (OCULTO) > MENU NIVEL UNO (MOUSE CLICK) > MENU NIVEL DOS+ (MOUSE PASADA)
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * PARTES OBJETO  DETALLE               HTML TAGS
+   * -------------------------------------------------------------------
+   * MENU         : HEADER                <header>
+   * MENU TOGGLE  : HEADER TITULO MENU    <header><a>
+   * MENU         : MENU AREA             <header><nav>
+   * MENU         : MENU BLOQUE           <header><nav><ul>
+   * MENU         : MENU ITEMS            <header><nav><ul><li>
+   * MENU         : MENU ITEMS LINKS      <header><nav><ul><li><a>
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * REFERENCIAS
+   * -------------------------------------------------------------------
+   * Menus Responsive Design
+   * http://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+   * http://cssmenumaker.com/blog/responsive-menu-tutorial
+   * 
+   * Iconos en Hypervinculos ( Antes y Despues del Texto )
+   * http://librosweb.es/css_avanzado/capitulo_4/propiedad_content.html#header
+   * 
+   * Snippet Responsive Design - CSS Media Queries CSS3
+   * http://getbootstrap.com/2.3.2/scaffolding.html#responsive
+   * 
+   * Menu Transparente
+   * http://www.jqueryscript.net/menu/Multi-Level-Drop-Down-Menu-with-Pure-CSS3-Minimal-Transparent-Menu.html
+   * 
+   * Simbolos Especiales UTF
+   * http://w3.unpocodetodo.info/utiles/glyphs.php
+   * 
+   * CSS Trucos
+   * http://www.trazos-web.com/2011/10/10/19-tips-y-trucos-para-css/
+   * 
+   * CSS Selectores
+   * https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+   * https://librosweb.es/libro/css/capitulo_2/selectores_avanzados.html
+   * https://www.w3.org/community/webed/wiki/Es/Selectores_avanzados_de_CSS
+   * 
+*/
+
+
+/* -------------- MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion General ] [ INICIO ] */
+   /* ----------- 02. DISEÑO [ VISUALIZAR Y POSICIONES ] */
+   /* ----------- [ MENU - Nivel-01 (ocultar) ] */
+   header nav ul#nav_Menu-Items                          { display: none; }
+
+   /* ----------- [ MENU - Nivel-02+ (ocultar) ] */
+   header nav ul#nav_Menu-Items ul                       { display: none; }
+
+   /* Hypervinculo Boton Menu-Website Toggle */
+   header span#span_Boton-Menu-WebSite:focus + header nav ul#nav_Menu-Items, header nav ul#nav_Menu-Items:hover { display: block; }
+   
+   /* Caracteristicas de los links */
+   /* header nav#nav_Menu-WebSite a                            { white-space: nowrap; }
+   
+/* -------------- MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion para PC Desktop ] [ INICIO ] */
+@media (min-width: 767px)
+{
+   /* ----------- 02. DISEÑO [ VISUALIZAR Y POSICIONES ] */
+   /* ----------- [ MENU TOGGLE BOTON ] */
+   /* Hypervinculo Boton Menu-Website Toggle Boton */
+   header a#a_Boton-Menu-WebSite                            { display: none; }
+   header a#a_Reset-Menu-WebSite                            { display: none; }
+   
+   /* Hypervinculo Boton Menu-Website Seleccion Tipo Boton */
+   /* header nav#nav_Menu-WebSite a                            { display: block; }
+   
+   /* Mostrar Lista Items en Escalera - deshabilitar si se necesita efecto menu lateral */
+   /* header nav#nav_Menu-WebSite ul li                        { position: relative; }
+   
+   /* Listado Items Nivel-01 - ordenar espaciado */
+   /* header nav#nav_Menu-WebSite ul                           { display: flex; }
+   /* header nav#nav_Menu-WebSite ul li                        { flex: auto; }
+   
+   /* Colocacion de los bloques de menu */
+   /* header nav#nav_Menu-WebSite ul ul                        { margin-left: 0.00%; margin-top: 0.00%; }
+   /* header nav#nav_Menu-WebSite ul ul ul                     { margin-left: 100.25%; top: 0%; }
+   
+   /* ----------- 08. COMPORTA [ OPERACIONES MOUSE ] */
+   /* ----------- [ MENU ] */
+   /* Desplegar Opciones - Mouse Click ( Aplica Niveles Todos ) */
+   header nav#nav_Menu-WebSite ul ul:hover, header nav#nav_Menu-WebSite ul a:focus + ul { display: block; } /* mouse click - Menu NO Desaparece si Mouse sale de Area */
+   
+   /* Desplegar Opciones - Mouse Click ( Aplica Nivel 1 ) y Mouse Pasada ( Aplica Niveles 2+ ) */
+   /* header nav#nav_Menu-WebSite ul a:focus + ul,
+   /* header nav#nav_Menu-WebSite ul:first-of-type a:focus + ul:nth-child(2)            /* mouse click  - Menu NO Desaparece si Mouse sale de Area */
+   
+   /* header nav#nav_Menu-WebSite ul:first-child a:focus + ul:nth-child(2),            /* mouse click  - Menu NO Desaparece si Mouse sale de Area */
+   /* { display: block; position: absolute; } /* mouse click - Menu NO Desaparece si Mouse sale de Area */
+   
+   
+   /* 
+   header nav#nav_Menu-WebSite ul ul li:hover > ul
+   { display:block; position: absolute; } /* mouse pasada */
+   
+   
+   
+   
+   
+   /* Desplegar Opciones - Mouse Pasada  ( Aplica Niveles Todos ) */
+   /* header nav#nav_Menu-WebSite li:hover > ul                { display:block; position: absolute; } /* mouse pasada */
+   
+} /* ------------ MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion para PC Desktop ] [ FIN ] */
+
+
+
+/* -------------- MENU WEBSITE [ FIN ] */

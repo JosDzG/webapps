@@ -1,0 +1,70 @@
+/* -------------- MENU WEBSITE [ INICIO ]
+   * 
+   * REFERENCIAS
+   * -------------------------------------------------------------------
+   * Menus Responsive Design
+   * http://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+   * http://cssmenumaker.com/blog/responsive-menu-tutorial
+   * 
+   * Iconos en Hypervinculos ( Antes y Despues del Texto )
+   * http://librosweb.es/css_avanzado/capitulo_4/propiedad_content.html#header
+   * 
+   * Snippet Responsive Design - CSS Media Queries CSS3
+   * http://getbootstrap.com/2.3.2/scaffolding.html#responsive
+   * 
+   * 
+   * INDICE DIVISIONES EN CSS
+   * -------------------------------------------------------------------
+   * GENERAL [ Configuracion Estandar ]
+   * RESPONSIVE DESIGN [ Configuracion para PC Desktop ]
+   * RESPONSIVE DESIGN [ Configuracion para Equipo Movil ]
+   * 
+   * 
+   * INDICE SECCIONES POR DIVISIONES EN CSS
+   * -------------------------------------------------------------------
+   * 01. DISEÑO [ MARGENES Y ESPACIOS ]
+   * 02. DISEÑO [ VISUALIZAR Y POSICIONES ]
+   * 03. DISEÑO [ ICONOS ]
+   * 04. DISEÑO [ FUENTES Y ESTILOS DE TEXTO ]
+   * 05. DISEÑO [ FONDOS, COLORES Y RELLENOS ]
+   * 06. DISEÑO [ BORDES Y FORMAS ]
+   * 07. DISEÑO [ EFECTOS ]
+   * 08. COMPORTA [ OPERACIONES MOUSE ]
+   * 
+   * 
+   * PARTES OBJETO  DETALLE               HTML TAGS
+   * -------------------------------------------------------------------
+   * MENU AREA    : HEADER                <header>
+   * MENU TOGGLE  : HEADER TITULO MENU    <header><a>
+   * MENU         : MENU AREA             <header><nav>
+   * MENU         : MENU BLOQUE           <header><nav><ul>
+   * MENU         : MENU ITEMS            <header><nav><ul><li>
+   * MENU         : MENU ITEMS LINKS      <header><nav><ul><li><a>
+*/
+
+
+/* -------------- BROWSER [ Reset ]
+    padding     : Relleno contorno Website
+    margin      : Margen  contorno Website
+*/
+*
+{
+    padding     : 0;
+    margin      : auto;
+}
+
+/* -------------- WEBPAGE [ Propiedades Generales ]
+    font-family : Fuente Familia
+    font-size   : Fuente Tamano
+    font-weight : Fuente Densidad
+    line-height : Parrafo Interlineado
+    background  : Tapiz Fondo
+*/
+body
+{
+    font-family : Helvetica, Tahoma, Verdana, Arial;
+    font-size   : 100%;
+    font-weight : normal;
+    line-height : 1.5;
+    background  : #eeeeff;
+}

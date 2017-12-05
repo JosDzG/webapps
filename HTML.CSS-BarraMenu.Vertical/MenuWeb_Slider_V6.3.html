@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+      <!-- HOJA DE ESTILOS -->
+      <style>
+            /* ----------- ESTILOS GENERALES -------------------------- */
+
+            /* clearfix : Evitar los colapsos de los margenes entre objetos y hace que los elementos se comporten como un elemento table
+               http://www.cssmojo.com/clearfix_block-formatting-context_and_hasLayout/#how-bad-is-that%22
+               https://www.w3schools.com/cssref/pr_class_display.asp
+            */
+            .cf:before, .cf:after {
+                  content : ""; 
+                  display : table;
+            }
+
+            /* clearfix : Evitar que los elementos proximos floten con un objeto
+               https://www.w3schools.com/cssref/pr_class_clear.asp
+               https://developer.mozilla.org/es/docs/Web/CSS/clear
+            */
+            .cf:after {
+                  clear : both;
+            }
+
+            /* Evitar escala de los elementos
+               https://css-tricks.com/almanac/properties/z/zoom/
+            */
+            .cf {
+                  *zoom : 1;
+            }
+
+            /* Modifica propiedades por defecto del CSS box model que calculan el alto y el ancho de los elementos
+               https://developer.mozilla.org/es/docs/Web/CSS/box-sizing
+            */
+            *, *:before, *:after {
+                  margin     : 0;
+                  padding    : 0;
+                  box-sizing         : border-box;
+                  -moz-box-sizing    : border-box;
+                  -webkit-box-sizing : border-box;
+            }
+
+            /* Diseño en los elementos del cuerpo del documento
+               es preferente usar el 100% del tamaño del texto
+            */
+            body{
+                  font        : 100% Helvetica;
+                  min-height  : 100%;
+            }
+
+            
+            /* ----------- [ DOC: SECCIONES DEL DOCUMENTO ] -------------------------- */
+         
+            /* Espacio que se deja entre el borde del navegador y el contenido
+               Espacio entre secciones
+            */
+            header, main, section, footer {
+                  margin-left  : 50px;
+                  margin-right : 50px;
+                  margin-top   : 20px;
+            }
+
+            /* Espacio que se deja entre el borde del navegador y el contenido */
+            header {
+                  margin-top   : 0px;
+            }
+            
+            /* Espacio que se deja entre el borde del navegador y el contenido */
+            footer {
+                  margin-button: 0px;
+            }
+
+         /* ----------- [ MENU - AREA MENU (hasta aqui vamos) ] -------------------------- */
+         /* Menu - font-awesome */
+         nav#nav_Menu-WebSite {
+
+               position   : fixed;
+               overflow-y : scroll;
+
+               top  : 0;
+               left : 0;
+               margin-left : 0px;
+/*
+               width: 250px;
+               height: 100vh;
+               max-height: 100vh;
+*/
+               opacity: 0.9;
+               transition: all 0.3s ease-in-out;
+         }
+
+         /* Barra Navegacion: Area - Diseño */
+         nav#nav_Menu-WebSite					{ color: rgba(0,0,0, 160); border: 1px solid  rgba(210,210,210, 255); background-color: rgba(17,17,17, 0.9); }
+         nav#nav_Menu-WebSite:hover				{ color: rgba(0,0,0, 255); border: 1px outset rgba(255,255,255, 255); background-color: rgba(17,17,17, 0.9); }
+         nav#nav_Menu-WebSite:focus				{ color: rgba(0,0,0, 255); border: 1px solid  rgba(210,210,210, 255); background-color: rgba(170,170,170, 255); }
+         nav#nav_Menu-WebSite:active			{ color: rgba(0,0,0, 255); border: 1px inset  rgba(210,210,210, 255); background-color: rgba(140,140,140, 255); }
+         nav#nav_Menu-WebSite:selected			{ color: rgba(0,0,0, 255); border: 1px solid  rgba(210,210,210, 255); background-color: rgba(120,120,120, 255); }
+
+         /* Barra Navegacion: Area - Mouse Activo */
+         nav#nav_Menu-WebSite:hover	{
+                  width: 250px;
+                  height: 100vh;
+                  max-height: 100vh;
+         }
+
+         /* Barra Navegacion: Area - Mouse No Activo */
+         nav#nav_Menu-WebSite:not(:hover) {
+            width : 33px;
+            height: 33px;
+            overflow:hidden;
+         }
+
+         /* Barra Navegacion: Icono - Iniciar Datos Generales */
+         nav#nav_Menu-WebSite:before {
+            /* content: "\2630"; */
+            content: "=";
+
+            width : 33px;
+            height: 33px;
+
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+
+            padding: 4px 8px;
+            margin: 0 0 1em 0;
+            outline: 0;
+
+            cursor: pointer;
+         }
+
+         /* Barra Navegacion: Icono - Diseño */
+         nav#nav_Menu-WebSite:hover::before		{ color: rgba(0,0,0, 255); border: 1px outset rgba(255,255,255, 255); background-color: rgba(200,200,200, 255); }
+         nav#nav_Menu-WebSite:focus::before		{ color: rgba(0,0,0, 255); border: 1px solid  rgba(210,210,210, 255); background-color: rgba(170,170,170, 255); }
+         nav#nav_Menu-WebSite:active::before	{ color: rgba(0,0,0, 255); border: 1px inset  rgba(210,210,210, 255); background-color: rgba(140,140,140, 255); }
+         nav#nav_Menu-WebSite:selected::before	{ color: rgba(0,0,0, 255); border: 1px solid  rgba(210,210,210, 255); background-color: rgba(120,120,120, 255); }
+
+         /* Barra Navegacion: Area - Deshabilita Eventos del Mouse en Objeto Icono */
+         /* nav#nav_WebSite:focus				{ pointer-events: none; } */
+
+
+         /* ----------- 03. DISENO [ ICONOS ] -------------------- */
+         /* ----------- [ MENU ] */
+         /* header > nav#nav_Menu-WebSite:before                                           { content: '<a class="a_Toggle" id="a_Boton-Menu" href="#" >[ &#9776; ]</a>'; } /* Opcion Menu - Nivel 1  - Posicion de Iconos Flechas */
+
+            nav#nav_Menu-WebSite ul ul li                                                   { width: 110%; } /* Opcion Menu - Nivel 2+ - Tamaño Ancho de opciones de Menu */
+
+            nav#nav_Menu-WebSite ul li > a:before                                           { padding-right: .5em; } /* Opcion Menu - Nivel 1  - Posicion de Iconos Flechas */
+            nav#nav_Menu-WebSite ul ul li > a:before                                        { padding-right: .5em; } /* Opcion Menu - Nivel 2+ - Posicion de Iconos Flechas */
+
+            /* Iconos Flechas */
+            nav#nav_Menu-WebSite ul li a:first-child:nth-last-child(2)::after               { content: "\25bc"; } /* Opcion Menu - Nivel 1  - Opciones con SubMenu */
+            nav#nav_Menu-WebSite ul > li:hover > a:first-child:nth-last-child(2)::after     { content: "\25bd"; } /* Opcion Menu - Nivel 1  - Opciones con SubMenu */
+
+            nav#nav_Menu-WebSite ul ul li a:first-child:nth-last-child(2)::after            { content: "\025b6"; } /* Opcion Menu - Nivel 2+ - Opciones con SubMenu */
+            nav#nav_Menu-WebSite ul ul > li:hover > a:first-child:nth-last-child(2)::after  { content: "\025b7"; } /* Opcion Menu - Nivel 2+ - Opciones con SubMenu */
+
+
+            /* Iconos Graficos - Usando Selectores CSS */
+            nav#nav_Menu-WebSite a[href$="plantilla.html"]:before { content: ' \205C'; }
+            nav#nav_Menu-WebSite a[id*="nav_Archivo"]:before      { content: url("./icons/actions/tick-icon.png"); }
+            nav#nav_Menu-WebSite a[id*="Nuevo"]:before            { content: url("./icons/actions/document-new.png"); }
+            nav#nav_Menu-WebSite a[id*="Guardar"]:before          { content: url("./icons/actions/document-save.png"); }
+            nav#nav_Menu-WebSite a[id*="GuardarComo"]:before      { content: url("./icons/actions/document-save.png"); }
+
+            nav#nav_Menu-WebSite a[id*="Salir"]:before            { content: url("./icons/actions/document-close.png"); }
+            nav#nav_Menu-WebSite a[id*="Salir"]                   { color: #ffff00; } /* Personalizar Opcion */
+
+            /* Iconos Graficos - Usando ID */
+            nav#nav_Menu-WebSite a#a_Abrir:before                 { content: url("./icons/actions/document-open.png"); }
+            nav#nav_Menu-WebSite a#a_Cerrar:before                { content: url("./icons/actions/document-close.png"); }
+            nav#nav_Menu-WebSite a#a_Edicion:before               { content: url("./icons/actions/tick-icon.png"); }
+            nav#nav_Menu-WebSite a#a_Copiar:before                { content: url("./icons/actions/edit-copy.png"); }
+            nav#nav_Menu-WebSite a#a_Cortar:before                { content: url("./icons/actions/edit-cut.png"); }
+            nav#nav_Menu-WebSite a#a_Pegar:before                 { content: url("./icons/actions/edit-paste.png"); }
+
+            /*
+            nav#nav_Menu-WebSite ul ul li > a:focus::after  { content: "x"; }
+            nav#nav_Menu-WebSite ul ul li:hover > a::after, nav#nav_Menu-WebSite ul ul li:hover > a::after  { content: "-"; }
+            */
+
+            /* Menu - Titulo */
+            nav#nav_Menu-WebSite ul#nav_Menu-Titulos li h1
+            {
+               font-weight: 200;
+               font-size: 22px;
+
+               text-align: center;
+               cursor: pointer;
+               color: #ffffff;
+               padding: 10px 10px;
+               margin: 10px 10px;
+               border: solid 2px white;
+               margin-top: 30px;
+            }
+
+            /* Menu - SubTitulo */
+            nav#nav_Menu-WebSite ul#nav_Menu-Titulos li h2
+            {
+               font-weight: 200;
+               font-size: 12px;
+
+               text-align: center;
+               cursor: pointer;
+               color: #ffffff;
+               padding: 5px 0px;
+            }
+
+            /* Menu - Grupo Items */
+            nav#nav_Menu-WebSite ul#nav_Menu-Items
+            {
+               margin: 20px;
+               display: block;
+               width: 200px;
+               margin-left: 25px;
+               list-style : none;
+            }
+
+            /* Menu - Items */
+            nav#nav_Menu-WebSite ul#nav_Menu-Items li
+            {
+               font-weight: 200;
+               padding: 12px 0px;
+               font-size: 14px;
+               transition: all 0.3s ease-in-out;
+            }
+
+            /* Menu - Items */
+            nav#nav_Menu-WebSite ul#nav_Menu-Items > li
+            {
+               border-bottom: solid 1px #808080;
+            }
+
+            /* Menu - Items */
+            nav#nav_Menu-WebSite ul a
+            {
+               cursor: pointer;
+               color: #808080;
+               text-decoration:none;
+               padding: 10px 5px;
+            }
+
+            nav#nav_Menu-WebSite ul#nav_Menu-Items ul li > a:after                  { padding-left: 2em; } /* Opcion Menu - Nivel 1  - Posicion de Iconos Flechas */
+            nav#nav_Menu-WebSite ul#nav_Menu-Items ul ul li > a:after               { padding-left: 2em; } /* Opcion Menu - Nivel 2+ - Posicion de Iconos Flechas */
+
+            /* Lista Bloque (Sangria de Bloques de Menu Nivel-02 en Adelante) */
+            nav ul#nav_Menu-Items ul              { margin:   0px  0px  0px 20px; }
+
+            /* Efectos en el menu */
+            nav#nav_Menu-WebSite ul:hover li:hover a:hover              { opacity: 2; } /* Opcion Mouse Pasada */
+            /*header nav#nav_Menu-WebSite ul li a:active                { background-color:#999999; } /* Opcion Boton Mouse Activo */
+            nav#nav_Menu-WebSite ul:hover li:hover a:active             { opacity: 1; background-color: rgba(17,17,17, 0); } /* Opcion Boton Mouse Activo */
+            /*header nav#nav_Menu-WebSite ul:active li:active a:focus   { color:#00f; } /* Opcion Boton Mouse Activo */
+            nav#nav_Menu-WebSite ul li:hover, header nav#nav_Menu-WebSite ul a:focus { background-color: rgba(17,17,17, 0.8); } /* Color espacios de sangria */
+
+
+            nav#nav_Menu-WebSite a:focus                                 { color: #999900; background-color: rgba(17,17,17, 0.9); } /* Opcion Seleccionada */
+            nav#nav_Menu-WebSite li:hover > a, header nav#nav_Menu-WebSite a:hover { color: #ffff00; background-color: rgba(17,17,17, 0.9); } /* Opciones Activas Cambio de color */
+
+            /* -------------- MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion General ] [ INICIO ] */
+            /* ----------- 02. DISENO [ VISUALIZAR Y POSICIONES ] */
+            /* ----------- [ MENU - Nivel-01 (ocultar) ] */
+            nav ul#nav_Menu-Items                          { display: none; }
+
+            /* ----------- [ MENU - Nivel-02+ (ocultar) ] */
+            nav ul#nav_Menu-Items ul                       { display: none; }
+
+            /* Menu - Iconos Items */
+            nav#nav_Menu-WebSite ul {
+                     border-bottom: solid 1px #808080;
+            }
+
+            nav ul ul {
+               color: #999900;
+               background-color: rgba(17,17,17, 0.9);
+
+               overflow-y:hidden;
+               position:fixed;
+
+               width: 200px;
+               top: 0;
+               left: 210px;
+
+               height: 100vh;
+            }
+
+            nav ul ul ul {
+               color: #999900;
+               background-color: rgba(17,17,17, 0.9);
+
+               overflow-y:hidden;
+               position:fixed;
+
+               width: 200px;
+               top: 0;
+               left: 410px;
+
+               height: 100vh;
+            }
+
+            nav ul ul ul ul {
+               color: #999900;
+               background-color: rgba(17,17,17, 0.9);
+
+               overflow-y:scroll;
+               position:fixed;
+
+               width: 200px;
+               top: 0;
+               left: 610px;
+
+               height: 100vh;
+            }
+
+            /* Caracteristicas de los links */
+            /* header nav#nav_Menu-WebSite a                            { white-space: nowrap; }
+
+
+            /* -------------- MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion para PC Desktop ] [ INICIO ] */
+
+            /* ----------- 02. DISENO [ VISUALIZAR Y POSICIONES ] */
+            /* ----------- [ MENU TOGGLE BOTON ] */
+
+            /* Hypervinculo Boton Menu-Website Seleccion Tipo Boton */
+            /* header nav#nav_Menu-WebSite a                            { display: block; }
+
+            /* Mostrar Lista Items en Escalera - deshabilitar si se necesita efecto menu lateral */
+            /* header nav#nav_Menu-WebSite ul li                        { position: relative; }
+
+            /* Listado Items Nivel-01 - ordenar espaciado */
+            /* header nav#nav_Menu-WebSite ul                           { display: flex; }
+            /* header nav#nav_Menu-WebSite ul li                        { flex: auto; }
+
+            /* Colocacion de los bloques de menu */
+            /* header nav#nav_Menu-WebSite ul ul                        { margin-left: 0.00%; margin-top: 0.00%; }
+            /* header nav#nav_Menu-WebSite ul ul ul                     { margin-left: 100.25%; top: 0%; }
+
+            /* ----------- 08. COMPORTA [ OPERACIONES MOUSE ] */
+            /* ----------- [ MENU ] */
+            /* Desplegar Opciones - Mouse Click ( Aplica Niveles Todos ) */
+            nav#nav_Menu-WebSite ul ul:hover, nav#nav_Menu-WebSite ul a:focus + ul { display: block; } /* mouse click - Menu NO Desaparece si Mouse sale de Area */
+
+            /* Desplegar Opciones - Mouse Pasada ( Aplica Niveles Todos ) */
+            /* nav#nav_Menu-WebSite li:hover > ul                { display:block; } /* mouse pasada */
+
+            /* ------------ MENU WEBSITE : RESPONSIVE DESIGN [ Configuracion para PC Desktop ] [ FIN ] */
+
+            /*
+            nav ul#ul_MenuLinks:before  		   {margin: 10px;}
+            nav ul#ul_MenuLinks:before			   {border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_MenuLinks:focus::before 	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_MenuLinks:hover::before   {border: 1px outset #fff; background-color: #ccc; }
+            nav ul#ul_MenuLinks:active::before  {border: 1px inset  #ddd; background-color: #777; }
+            */
+
+            nav ul#ul_NavLinks		{margin: 10px; }
+            nav ul#ul_NavLinks li a		{display: block; outline: 0px; text-indent: -9999px; }
+            nav ul#ul_NavLinks li a          	{width : 33px; height: 33px; }
+            nav ul#ul_NavLinks li a:link     	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavLinks li a:visited  	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavLinks li a:hover    	{border: 1px outset #fff; background-color: #ccc; }
+            nav ul#ul_NavLinks li a:active   	{border: 1px inset  #ddd; background-color: #777; }
+
+            nav ul#ul_NavSocial		{margin: 10px; }
+            nav ul#ul_NavSocial li a		{display: block; outline: 0px; text-indent: -9999px; }
+            nav ul#ul_NavSocial li a         	{width : 33px; height: 33px; }
+            nav ul#ul_NavSocial li a:link    	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavSocial li a:visited 	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavSocial li a:hover   	{border: 1px outset #fff; background-color: #ccc; }
+            nav ul#ul_NavSocial li a:active  	{border: 1px inset  #ddd; background-color: #777; }
+
+            nav ul#ul_NavUtils				   {margin: 10px; }
+            nav ul#ul_NavUtils li a		{display: block; outline: 0px; text-indent: -9999px; }
+            nav ul#ul_NavUtils li a          	{width : 33px; height: 33px; }
+            nav ul#ul_NavUtils li a:link     	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavUtils li a:visited  	{border: 1px solid  #ddd; background-color: #999; }
+            nav ul#ul_NavUtils li a:hover    	{border: 1px outset #fff; background-color: #ccc; }
+            nav ul#ul_NavUtils li a:active   	{border: 1px inset  #ddd; background-color: #777; }
+
+      </style>
+
+   <!-- HEAD -->
+   <head>
+      <title>Menu Web - Slider</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   </head>
+   
+   <body>
+      
+      <!-- ~~~~~~~~~ BARRA MENU WEBSITE [ nav_Menu-WebSite ] ~~~~~~~~~ -->
+      <nav class="nav_Menu" id="nav_Menu-WebSite">
+            
+            <!-- MENU TITULOS  -->
+            <ul id="nav_Menu-Titulos">
+               <li>
+                  <h1>MENU PRINCIPAL</h1>
+                  <h2>Seleccion de Opciones del Sistema</h2>
+               </li>
+            </ul>
+            
+            <!-- MENU PRINCIPAL  -->
+            <ul id="nav_Menu-Items">
+            
+               <li tabindex="0"><a id="nav_Archivo" tabindex="0" href="#url">Archivo</a>
+                  <ul>
+                     <li><a tabindex="1" href="#url">Nuevo</a>
+                        <ul>
+                           <li><a href="plantilla.html">Plantilla</a></li>
+                           <li><a href="#url">En Blanco</a></li>
+                           <!-- <li><a><hr /></a></li> -->
+                           <li><a href="#url">Personalizar</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="">Abrir</a></li>
+                     <li><a href="">Cerrar</a></li>
+                     <li><a href="#url">Guardar</a></li>
+                     <li><a href="#url">Guardar como</a></li>
+                     <li><a><hr /></a></li>
+                     <li><a href="">Salir</a></li>
+                  </ul>
+               </li>
+               
+               <li><a tabindex="10" href="#url">Edicion</a>
+                  <ul>
+                     <li><a href="#url">Copiar</a></li>
+                     <li><a href="#url">Cortar</a></li>
+                     <li><a href="#url">Pegar</a></li>
+                     <li><a href="#url">Seleccionar</a></li>
+                     <li><a href="#url">Seleccionar Todo</a></li>
+                     <li><a><hr /></a></li>
+                     <li><a href="#url">Buscar<span></span></a></li>
+                     <li><a href="#url">Remplazar</a></li>
+                  </ul>
+               </li>
+               
+               <li tabindex="20"><a tabindex="20" href="#url">Ver</a>
+                  <ul>
+                     <li tabindex="211"><a tabindex="221" href="#url">Zoom</a>
+                        <ul tabindex="2111">
+                           <li><a href="#url">% 100</a></li>
+                           <li><a href="#url">%  75</a></li>
+                           <li><a href="#url">%  50</a></li>
+                           <li><a href="#url">Automatica</a></li>
+                           <!-- <li><a><hr /></a></li> -->
+                           <li><a href="#url">Personalizar</a></li>
+                        </ul>
+                     </li>
+                     <li tabindex="221"><a tabindex="221" href="#url">Barras Herramientas</a>
+                        <ul>
+                           <li><a href="#url">Barra de Estado</a></li>
+                           <li tabindex="2211"><a tabindex="2211" href="#url">Barra de Herramientas</a>
+                              <ul>
+                                 <li><a href="#url">Barra de Menu</a></li>
+                                 <li><a href="#url">Barra de Iconos</a></li>
+                                 <li><a href="#url">Barra de Direccion</a></li>
+                                 <li tabindex="22111"><a tabindex="22111" href="#url">Nivel 4</a>
+                                    <ul>
+                                       <li><a href="#url">Opcion 01</a></li>
+                                       <li><a href="#url">Opcion 02</a></li>
+                                       <li><a href="#url">Opcion 03</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li><a href="#url">Barra Lateral</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="">Estilo</a></li>
+                  </ul>
+               </li>
+               
+               <li tabindex="50"><a tabindex="20" href="#url">Ayuda</a>
+                  <ul>
+                     <li><a tabindex="20" href="#url">Indice</a></li>
+                     <li><a href="#url">Ayuda</a></li>
+                     <li><a href="exe.html">Tips</a></li>
+                     <li><a href="#url" tabindex="20">Acerca de...</a></li>
+                  </ul>
+               </li>
+               
+               <li tabindex="60"><a tabindex="20" href="#url">Opcion 01</a></li>
+               <li tabindex="70"><a tabindex="20" href="#url">Opcion 02</a></li>
+               <li tabindex="70"><a tabindex="20" href="#url">Opcion 03</a></li>
+            </ul>
+            
+            <!-- MENU LINKS FAVORITOS -->
+            <ul id="ul_NavLinks">
+                        <li><a title="Link001"  href="#url">Link001</a></li>
+                        <li><a title="Link002"  href="#url">Link002</a></li>
+                        <li><a title="Link003"  href="#url">Link003</a></li>
+                        <li><a title="Link004"  href="#url">Link004</a></li>
+            </ul>
+            
+            <!-- MENU SOCIAL -->
+            <ul id="ul_NavSocial">
+                        <li><a title="Facebook" href="#url">Facebook</a></li>
+                        <li><a title="Twitter"  href="#url">Twitter</a></li>
+                        <li><a title="Google+"  href="#url">Google+</a></li>
+                        <li><a title="Youtube"  href="#url">Youtube</a></li>
+            </ul>
+            
+            <!-- MENU UTILS -->
+            <ul id="ul_NavUtils">
+                        <li><a title="config"   href="#url">Config</a></li>
+                        <li><a title="Ayuda"    href="#url">Ayuda</a></li>
+                        <li><a title="about"    href="#url">About</a></li>
+            </ul>
+            
+      </nav>
+      <!-- ~~~~~~~~~ BARRA MENU WEBSITE [ nav_Menu-WebSite ] ~~~~~~~~~ -->
+
+
+      <!-- PAGINA HEADER -->
+      <header>
+         <h1>TITULO WEBSITE - 2017.08.16 - 14:00 hrs</h1>
+         <h1>HEADER BANNER</h1>
+         <h1>HEADER LOGO</h1>
+         <h1>HEADER LOGIN</h1>
+         <ol id="ol_NavUsuario">
+            <li><a title="logon"    href="#url">Usuario</a></li>
+         </ol>
+         <ol id="ol_NavBusqueda">
+            <li><a title="Busqueda" href="#url">Busqueda</a></li>
+         </ol>
+      </header>
+      
+      <!-- PAGINA CONTENIDO PRINCIPAL -->
+      <main>
+         <article>
+            <h2>Titulo Articulo - Main</h2>
+            <p>Parrafo del Articulo</p>
+            <p>Colocacion de menus misma altura del menu</p>
+            <p>Colocacion de menus si pasa el tamaño del espacio</p>
+            <p>Tabindex</p>
+            <p>Elementos Checked</p>
+            <p>Iconos segun el contenido del item</p>
+         </article>
+      </main>
+      
+      <!-- PAGINA CONTENIDO SECCIONES -->
+      <section id="contenido">
+         <article>
+            <h2>Titulo Articulo - Seccion</h2>
+            <p>Parrafo del Articulo</p>
+            <p>Parrafo del Articulo</p>
+            <p>Parrafo del Articulo</p>
+            <p>Parrafo del Articulo</p>
+            <p>Parrafo del Articulo</p>
+            <p>Parrafo del Articulo</p>
+         </article>
+      </section>
+      
+      <!-- PAGINA PIE -->
+      <footer>
+      </footer>
+      
+   </body>
+</html>

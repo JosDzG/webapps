@@ -1,0 +1,87 @@
+/* {Ancho; Alto; Color; Posicion Relativa; Capa Jerarquia} { Margen Interior; Margen Exterior; Link Activo Borde; Link Texto Color; Link Texto Color Fondo; }  */
+
+
+/* <!-- ~~~~~~~~~ BROWSER [ Reset ] ~~~~~~~~~ -->
+    padding     : Relleno contorno Website
+    margin      : Margen  contorno Website
+*/
+*
+{
+    padding     : 0;
+    margin      : auto;
+}
+
+
+/* <!-- ~~~~~~~~~ WEBPAGE [ Propiedades Generales ] ~~~~~~~~~ -->
+    font-family : Fuente Familia
+    font-size   : Fuente Tamano
+    font-weight : Fuente Densidad
+    line-height : Parrafo Interlineado
+    background  : Tapiz Fondo
+*/
+body
+{
+    font-family : Tahoma, Verdana, Arial, Helvetica;
+    font-size   : 70%;
+    font-weight : normal;
+    line-height : 1.5;
+    background  : #ffffff;
+}
+
+
+
+
+/* <!-- ~~~~~~~~~ NAV [ BARRA ICONOS VERTICAL FIJA (inicio) ] ~~~~~~~~~ --> */
+
+/* -------------- BARRA MENU { Propiedades }
+   Objetos      : Bloque Navegacion {Relleno: sup der baj izq; Barra-Ancho: 100%; Back-Color: #color; }
+   Influencia   : Nivel 1
+*/
+#BarraIconos_VrtFix      {position: fixed; padding: 5px 5px 5px 5px; background: #aaa; }  /* Vertical */
+
+/* -------------- BLOQUES LISTAS ITEMS { Propiedades }
+   Objetos      : Bloque Lista Desordenada {Relleno: sup der baj izq; Lista Estilo; Lista-Estilo: ninguno; }
+                  Bloque Lista Items       {Relleno: sup der baj izq; Visualizar: Bloque-Lineal; }
+                  Links                    {Visualizar: Bloque; Texto-Identacion: Desaparecer; Bordes Enlaces Visitados; }
+   Influencia   : Nivel Todos
+*/
+#BarraIconos_VrtFix ul   {padding: 5px 2px 5px 2px; list-style: none; }
+#BarraIconos_VrtFix li   {padding: 0px 0px 0px 0px; display: block; } /* Vertical */
+#BarraIconos_VrtFix li a {display: block; text-indent: -9999px; outline: 0px; }
+
+/* -------------- MENU NIVEL TODOS { Propiedades } ( Metodos )
+   Objetos      : Bloque Lista Icons {Tamaño-Ancho: 33px; Tamaño-Alto: 33px; }
+                  Bloque Lista Icons (Link)          {Borde: Linea Tipo Color; Back-Color: color; }
+                  Bloque Lista Icons (Link Visitado) {Borde: Linea Tipo Color; Back-Color: color; }
+                  Bloque Lista Icons (Mouse Pasada)  {Borde: Linea Tipo Color; Back-Color: color; }
+                  Bloque Lista Icons (Activo)        {Borde: Linea Tipo Color; Back-Color: color; }
+   Influencia   : Nivel Todos
+*/
+#BarraIconos_VrtFix li a.Icon         {width : 33px; height: 33px; }
+#BarraIconos_VrtFix li a.Icon:link    {border: 1px solid  #ddd; background-color: #999; }
+#BarraIconos_VrtFix li a.Icon:visited {border: 1px solid  #ddd; background-color: #999; }
+#BarraIconos_VrtFix li a.Icon:hover   {border: 1px outset #fff; background-color: #ccc; }
+#BarraIconos_VrtFix li a.Icon:active  {border: 1px inset  #ddd; background-color: #777; }
+
+/* -------------- ICONOS { Propiedades }
+   Objetos      : Bloque Lista Items > Link.Icono {Back-Imagen: PNG 16px x 16px; Repeticion; Back-Imagen-Posicion: 5px x lado; }
+   Influencia   : Nivel Icono
+*/
+#BarraIconos_VrtFix_bar01 li a.Nuevo  {background: url(./icons/actions/_document-new.png)   no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar01 li a.Abrir  {background: url(./icons/actions/_document-open.png)  no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar01 li a.Guarda {background: url(./icons/actions/_document-save.png)  no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar01 li a.Cerrar {background: url(./icons/actions/_document-close.png) no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar01 li a.Imprim {background: url(./icons/actions/_document-print.png) no-repeat; background-position: 5px; }
+
+/* -------------- ICONOS { Propiedades }
+   Objetos      : Bloque Lista Items > Link.Icono {Back-Imagen: PNG 16px x 16px; Repeticion; Back-Imagen-Posicion: 5px x lado; }
+   Influencia   : Nivel Icono
+*/
+#BarraIconos_VrtFix_bar02 li a.Deshac {background: url(./icons/actions/_edit-undo.png)   no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar02 li a.Rehace {background: url(./icons/actions/_edit-redo.png)   no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar02 li a.Cortar {background: url(./icons/actions/_edit-cut.png)    no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar02 li a.Copiar {background: url(./icons/actions/_edit-copy.png)   no-repeat; background-position: 5px; }
+#BarraIconos_VrtFix_bar02 li a.Pegar  {background: url(./icons/actions/_edit-paste.png)  no-repeat; background-position: 5px; }
+
+/* <!-- ~~~~~~~~~ NAV [ BARRA ICONOS VERTICAL FIJA (fin) ] ~~~~~~~~~ --> */
+
